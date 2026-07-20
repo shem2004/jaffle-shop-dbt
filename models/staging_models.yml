@@ -2,18 +2,23 @@ version: 2
 
 models:
   - name: stg_customers
+    description: "Cleaned version of raw customers data."
     columns:
       - name: customer_id
+        description: "Primary key for customers."
         tests:
           - unique
           - not_null
 
   - name: stg_orders
+    description: "Cleaned version of raw orders data."
     columns:
       - name: order_id
+        description: "Primary key for orders."
         tests:
           - unique
           - not_null
       - name: customer_id
+        description: "Foreign key linking to the customers table."
         tests:
           - not_null
